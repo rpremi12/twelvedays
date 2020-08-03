@@ -26,7 +26,8 @@ sing_day <- function(dataset, line, phrase_col){
   phrases <- dataset %>% pull({{phrase_col}})
   phrases <- phrases[1:line]
 
-  if(substr(phrases[1],1,3) !="and"){
+
+  if(substr(phrases[1],1,1) =="a"){
     phrases <- rev(phrases)
   }
 
@@ -41,5 +42,4 @@ sing_day <- function(dataset, line, phrase_col){
   return(res)
 
 }
-
 
